@@ -2,14 +2,14 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:cropsdoctor/Screen/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ImageChooserScreen extends StatefulWidget {
   @override
-  State<ImageChooserScreen> createState() =>
-      _ImageChooserScreenState();
+  State<ImageChooserScreen> createState() => _ImageChooserScreenState();
 }
 
 class _ImageChooserScreenState extends State<ImageChooserScreen> {
@@ -23,6 +23,8 @@ class _ImageChooserScreenState extends State<ImageChooserScreen> {
       setState(() {
         this.imagepath = imageTemporary;
         _storeUserData();
+        // Navigator.of(context)
+        // .push(MaterialPageRoute(builder: (_) => ResultScreen(image: image)));
       });
     }
   }
@@ -119,8 +121,8 @@ class _ImageChooserScreenState extends State<ImageChooserScreen> {
                                         ),
                                         child: imagepath != ""
                                             ? CircleAvatar(
-                                                backgroundImage:  FileImage(
-                                                    File(imagepath)),
+                                                backgroundImage:
+                                                    FileImage(File(imagepath)),
                                                 radius: 65.0,
                                               )
                                             : const Image(
@@ -233,7 +235,15 @@ class _ImageChooserScreenState extends State<ImageChooserScreen> {
                             top: 130,
                           ),
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        ResultScreen(imagepath: imagepath),
+                                  ),
+                                );
+                              },
                               child: const Text(
                                 'Next',
                                 style: TextStyle(

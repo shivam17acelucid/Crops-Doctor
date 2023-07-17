@@ -238,7 +238,7 @@ class _SelectCropsScreen extends State<SelectCropsScreen> {
                                   child: ElevatedButton(
                               style: ElevatedButton.styleFrom(shape: StadiumBorder()),
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/ImageChooserScreen');
+                                  Navigator.pushNamed(context, '/accessLocationScreen');
                                 },
                                 child: const Text(
                                   'Skip',
@@ -254,7 +254,7 @@ class _SelectCropsScreen extends State<SelectCropsScreen> {
                                   child: ElevatedButton(
                               style: ElevatedButton.styleFrom(shape: StadiumBorder()),
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/ImageChooserScreen');
+                                  Navigator.pushNamed(context, '/accessLocationScreen');
                                 },
                                 child: const Text(
                                   'Next',

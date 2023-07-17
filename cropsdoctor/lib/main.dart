@@ -1,7 +1,9 @@
 import 'dart:collection';
 
 import 'package:cropsdoctor/Screen/imagechooser.dart';
+import 'package:cropsdoctor/Screen/location_screen.dart';
 import 'package:cropsdoctor/Screen/select_crops_screen.dart';
+import 'package:cropsdoctor/Screen/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cropsdoctor/Screen/splashscreen.dart';
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/ImageChooserScreen': (context) => ImageChooserScreen(),
         '/queryScreen':(context) => const SelectCropsScreen(),
+        '/accessLocationScreen':(context) => AccessLocationScreen(),
+        // '/resultScreen':(context) => ResultScreen()
       },
       title: 'Rova-23',
       theme: ThemeData(
